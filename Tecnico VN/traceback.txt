@@ -1,0 +1,50 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 29, in script
+    "This is it... Your first day of university..."
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+IOError: Couldn't find file 'maintheme.ogg'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 29, in script
+    "This is it... Your first day of university..."
+  File "renpy/ast.py", line 685, in execute
+    statement_name("say")
+  File "renpy/ast.py", line 46, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+  File "renpy/exports.py", line 1637, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2546, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3007, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3700, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1101, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1079, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1021, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 487, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'maintheme.ogg'.
+
+Windows-10-10.0.19041
+Ren'Py 7.4.2.1292
+Tecnico VN 1.0
+Tue Feb  2 00:00:46 2021
